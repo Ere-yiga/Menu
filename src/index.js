@@ -1,34 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 function App(){
-    return<h1>Hello react</h1>
+  return(
+    <div>
+      <h1>Hello react</h1>
+      <button>Click Me</button>
+    </div>
+  );
 }
-//React V18
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+  alert("welcome")
+});
 const root = ReactDOM.createRoot(document.getElementById ("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-);
-
-
-
-
-
-
-/*
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-function App(){
-    return<h1>Hello react</h1>
-}
-//React V18
-const root = ReactDOM.createRoot(document.getElementById ("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-*/
+); 
