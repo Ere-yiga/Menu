@@ -57,7 +57,7 @@ function App(){
   );
 }
 function Header(){
- //const style = {color: "blue", fontSize: "40px"};
+
  const style = {} 
  return(
     <header className="header">
@@ -67,7 +67,7 @@ function Header(){
 }
 function Menu(){
   const pizzas = PizzaData; 
-  /* const pizzas= {};*/
+
   const numPizzas = pizzas.length;
 
   return (
@@ -85,22 +85,13 @@ function Menu(){
           </ul>
         </>
       ): <p>We're still working on our menu, please come back later</p>} 
-     {/*  <Pizza name="Pizza Spinachi" ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-      photoName="pizzas/spinaci.jpg" 
-      price={10}
-      />
-
-      <Pizza name="Pizza Funghi"
-      ingredients="Tomato mushrooms"
-      price={12}
-      photoName = "pizzas/funghi.jpg"
-      /> */}
+     
     </main>
   );
 }
 //INSTEAD OF USING .props everytime, I CAN JUST DESTRUCTURE
 function Pizza({ pizzaObj }){
-  //if(pizzaObj.soldOut) return null;
+  
   return(
     <li className={`pizza ${pizzaObj.soldOut ? 'sold-out' : ""}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name}/>
@@ -119,15 +110,6 @@ function Footer(){
   const closingHour = 22;
   const isOpen = hour >= openHour && hour <= closingHour
   console.log(isOpen)
-  //if(hour >= openHour && hour <= closingHour)alert("We are opened");
-  //else alert("We are closed");
-
-/*   if(!isOpen)
-    return (
-      <p>
-        We're happy to welcome you betweem {openHour}:00 and {closingHour}:00
-      </p>
-    )  */
   
   return (
     <footer className="footer">
@@ -136,7 +118,6 @@ function Footer(){
       ) : <p>We're happy to welcome you betweem {openHour}:00 and {closingHour}:00</p>}
     </footer>
   );
-  //React.createElement("footer", null, "Welcome peeps");
 }
 
 function Order({ closingHour, openHour }){
@@ -152,5 +133,4 @@ root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-
 );
